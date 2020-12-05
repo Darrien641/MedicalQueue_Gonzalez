@@ -26,11 +26,12 @@ namespace MedicalQueue_Gonzalez
 
         public string Dequeue()
         {// returns queue item that should be shown too the user
-            Patient CurrentPatient = Patients[0];
-            if (CurrentPatient == null)
+            
+            if (Patients.Count <= 0)
             {
-                return null;
+                return "List is  empty!";
             }
+            Patient CurrentPatient = Patients[0];
             Patients.RemoveAt(0);
             return $"{CurrentPatient.Name}  {CurrentPatient.Priority}";
         }

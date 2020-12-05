@@ -12,8 +12,8 @@ namespace MedicalQueue_Gonzalez
             {
                 Console.WriteLine("Choose an option:");
                 Console.WriteLine(MedQueue.Menu());
-                input =  Console.ReadLine();
-                if (input.ToUpper() == "A") 
+                input = Console.ReadLine();
+                if (input.ToUpper() == "A")
                 {
                     string name;
                     int priority;
@@ -21,16 +21,19 @@ namespace MedicalQueue_Gonzalez
                     name = Console.ReadLine();
                     Console.WriteLine("What is the patients priority?");
                     priority = int.Parse(Console.ReadLine());
-                    MedQueue.Enqueue(name,priority);
+                    Console.WriteLine($"There are now {MedQueue.Enqueue(name, priority)} Patient(s) in the ERQueue\n");
                 }
                 if (input.ToUpper() == "P")
                 {
-                   Console.WriteLine(MedQueue.Dequeue());
+
+                    Console.WriteLine($"\n{MedQueue.Dequeue()}");
+
                 }
                 if (input.ToUpper() == "L")
                 {
-                    Console.WriteLine(MedQueue.ToString());
+                    Console.WriteLine($"\n{MedQueue.ToString()}");
                 }
+
             }
         }
     }
